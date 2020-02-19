@@ -1,0 +1,140 @@
+@import '~styles/mixins';
+@import '~styles/variables';
+
+html {
+  height: 100%;
+  overflow: auto;
+}
+
+body {
+  font-family: 'Rubik', Arial, Helvetica, sans-serif;
+  font-smoothing: antialiased; /* stylelint-disable-line property-no-unknown */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 16px;
+  line-height: 28px;
+  color: $color-marine;
+  overscroll-behavior: none;
+  height: 100%;
+}
+
+:global(.hidden-small-desktop-down) {
+  @include media-bootstrap-small-desktop-down {
+    display: none;
+  }
+}
+
+:global(.hidden-small-desktop-up) {
+  @include media-bootstrap-small-desktop-up {
+    display: none;
+  }
+}
+
+:global(.hidden-tablet-down) {
+  @include media-tablet {
+    display: none;
+  }
+}
+
+:global(.hidden-tablet-up) {
+  @include media-tablet-up {
+    display: none;
+  }
+}
+
+:global(.container) {
+  @include media-tablet-large {
+    max-width: initial;
+    padding: 0 25px;
+  }
+}
+
+:global(.slick-dots) {
+  bottom: -3px;
+
+  li {
+    margin: 0 2px;
+
+    button::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      color: transparent;
+      opacity: 1;
+      transition: box-shadow 0.3s ease, opacity 0.3s ease;
+      box-shadow: inset 0 0 0 2px $color-marine;
+      border-radius: 50%;
+    }
+
+    button:hover::before {
+      opacity: 0.6;
+    }
+
+    &:global(.slick-active) button::before {
+      opacity: 1;
+      box-shadow: inset 0 0 0 8px $color-marine;
+    }
+  }
+}
+
+html,
+body,
+:global(#react-view) {
+  position: relative;
+  width: 100%;
+  min-width: 320px;
+}
+
+/* styles for text added through text editor */
+
+/* stylelint-disable no-descending-specificity */
+:global(.textEditorContent) {
+  ul {
+    margin: 20px 0;
+
+    li {
+      position: relative;
+      padding-left: 28px;
+
+      &:not(:last-child) {
+        margin-bottom: 27px;
+      }
+
+      &::before {
+        content: '—';
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+:global(.noAnimation) * {
+  animation-duration: 0ms;
+  animation-delay: 0ms;
+
+  @include ios {
+    animation-duration: 0.1ms;
+    animation-delay: 0.1ms;
+  }
+}
+
+// plain text styles
+:global(.muted-text) {
+  color: $color-gray;
+
+  p {
+    margin-bottom: 15px;
+  }
+}
+
+:global(.narrow-heading) {
+  max-width: 60%;
+
+  @include media-tablet1 {
+    max-width: none;
+  }
+}

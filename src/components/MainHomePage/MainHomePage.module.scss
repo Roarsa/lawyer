@@ -1,0 +1,232 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+.root {
+  width: 100vw;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(-45deg, white 25%, #f4f4f4 25%, #f4f4f4 75%, white 75%);
+}
+
+.b-container {
+  @media screen and (min-width: 1500px) {
+    width: 1400px;
+  }
+}
+
+.info-block {
+  @media screen and (max-width: 990px) {
+    min-width: 55%;
+  }
+}
+
+.statue-block {
+  @media screen and (max-width: 990px) {
+    min-width: 37%;
+    margin-left: 1%;
+  }
+}
+
+.logo {
+  display: flex;
+  margin-top: 23px;
+
+  &-name {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'PlayfairDisplay', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #0f0f0f;
+    letter-spacing: 1.11px;
+
+    @media screen and (min-width: 1500px) {
+      font-size: 27px;
+    }
+  }
+
+  &-slogan {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 19px;
+    color: #0f0f0f;
+    letter-spacing: 1.06px;
+    line-height: 20px;
+    padding: 6px;
+    margin-left: 6px;
+    border-left: 3px solid #0f0f0f;
+    max-width: 163px;
+    height: 60px;
+
+    @media screen and (min-width: 1500px) {
+      font-size: 21px;
+      max-width: 300px;
+    }
+
+    @media screen and (max-width: 360px) {
+      padding-top: 0;
+    }
+  }
+}
+
+.title {
+  text-transform: uppercase;
+
+  &-thin {
+    font-family: 'STHeitiSC-Light', Arial, Helvetica, sans-serif;
+    font-size: 32px;
+    color: #212a41;
+    letter-spacing: 0.53px;
+    line-height: 60px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+    @media screen and (min-width: 1500px) {
+      font-size: 44px;
+      line-height: 118px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 25px;
+      line-height: 40px;
+      text-shadow: none;
+    }
+
+    @media screen and (max-width: 450px) {
+      font-size: 21px;
+    }
+
+    @media screen and (max-width: 390px) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 340px) {
+      font-size: 16px;
+    }
+  }
+
+  &-bold {
+    font-family: 'PlayfairDisplay', Arial, Helvetica, sans-serif;
+    font-style: bold;
+    font-size: 60px;
+    color: #212a41;
+    margin-top: -10px;
+    letter-spacing: 1px;
+    line-height: 65px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+    @media screen and (min-width: 1500px) {
+      font-size: 84px;
+      line-height: 85px;
+    }
+
+    @media screen and (max-width: 1200px) {
+      font-size: 45px;
+      line-height: 45px;
+      text-shadow: none;
+    }
+
+    @media screen and (max-width: 450px) {
+      font-size: 42px;
+    }
+
+    @media screen and (max-width: 390px) {
+      font-size: 36px;
+    }
+
+    @media screen and (max-width: 340px) {
+      font-size: 32px;
+    }
+  }
+}
+
+.description {
+  font-family: HelveticaNeue, Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #0f0f0f;
+  letter-spacing: 1px;
+  line-height: 26px;
+
+  @media screen and (min-width: 1500px) {
+    font-size: 20px;
+    line-height: 28px;
+    min-width: 681px;
+  }
+}
+
+.get-consultation {
+  background: #212a41;
+  margin-top: 30px;
+  width: 260px;
+  height: 50px;
+  border: 1px solid #979797;
+  font-family: HelveticaNeue, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: white;
+  letter-spacing: 1px;
+  line-height: 26px;
+
+  @media screen and (min-width: 1500px) {
+    font-size: 20px;
+    width: 330px;
+    height: 65px;
+  }
+}
+
+.information {
+  margin-top: 30px;
+  margin-bottom: 50px;
+
+  @media screen and (max-width: 530px) {
+    margin-bottom: 100px;
+  }
+}
+
+.statue {
+  @include bg-image('eagle.png');
+
+  width: 450px;
+  height: 450px;
+  transform: scale(-1, 1);
+
+  @media screen and (min-width: 1500px) {
+    margin-left: -140px;
+    background-position-x: -10px;
+    width: 600px;
+    height: 700px;
+  }
+
+  @media screen and (max-width: 1200px) {
+    width: 380px;
+    height: 380px;
+  }
+
+  @media screen and (max-width: 990px) {
+    width: 100%;
+    height: 330px;
+  }
+
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.address {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: #0f0f0f;
+  letter-spacing: 0.94px;
+  text-align: right;
+  line-height: 22px;
+  width: 100%;
+  position: absolute;
+  top: 28px;
+  right: 40px;
+
+  @media screen and (min-width: 1500px) {
+    font-size: 20px;
+  }
+
+  @media screen and (max-width: 530px) {
+    top: auto;
+    bottom: 30px;
+  }
+}

@@ -1,0 +1,39 @@
+@import '~styles/variables';
+@import '~styles/mixins';
+
+@font-face {
+  font-family: 'PlayfairDisplay';
+  src: url('_styles/fonts/PlayfairDisplay-Bold.ttf') format('opentype');
+  font-style: bold;
+}
+
+.undefined {
+  font-family: 'PlayfairDisplay', Arial, Helvetica, sans-serif;
+}
+
+.color {
+  &-marine {
+    color: #212a41;
+    text-shadow: 0 1px 1px #000;
+    font-family: 'PlayfairDisplay', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30pt;
+
+    @media screen and (max-width: 767px) {
+      text-shadow: none;
+      text-align: center;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-left: 100px;
+    }
+  }
+
+  &-white {
+    color: white;
+    text-shadow: 0 1px 1px #000;
+    font-family: 'PlayfairDisplay', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 30pt;
+  }
+}

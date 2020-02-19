@@ -1,0 +1,36 @@
+.title-root {
+  display: block;
+  position: relative;
+}
+
+.dots {
+  height: 48px;
+  background: radial-gradient(#716e81 10%, transparent 20%) 0 0, radial-gradient(rgba(0, 0, 0, 0.1) 1%, transparent 1%) 50px 50px;
+  background-size: 15px 15px;
+}
+
+.first-line {
+  display: flex;
+  align-items: center;
+  margin-top: 60px;
+
+  .dots {
+    width: 30%;
+    margin-left: 5px;
+  }
+}
+
+.subtitle {
+  text-shadow: 0 1px 1px #000;
+  font-family: 'PlayfairDisplay', Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #c2a280;
+  position: relative;
+  line-height: 0.3;
+}
+
+.second {
+  max-width: calc(30% + 555px);
+  margin-top: 10px;
+  margin-left: -5px;
+}
