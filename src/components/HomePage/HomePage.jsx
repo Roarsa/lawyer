@@ -32,11 +32,6 @@ class HomePage extends PureComponent {
     this.setState({ innerHeight: innerHeight, innerWidth: innerWidth});
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    console.log('MOUNT-1');
-    window.scrollTo(0, Number(sessionStorage.getItem('scroll')));
-  }
-
   changePositionY = (page) => {
     const { innerHeight, innerWidth } = window;
     if (innerWidth > 1250) {
@@ -75,8 +70,8 @@ class HomePage extends PureComponent {
 
   goBack = (slug) => {
     this.setState({ services: slug }, () => {
-      console.log('I HATE IT');
-      window.scrollTo(0, Number(sessionStorage.getItem('scroll')));
+        console.log(this.state.y);
+        window.scroll(0, this.state.y);
     });
   }
 
@@ -114,7 +109,7 @@ class HomePage extends PureComponent {
           handleButtonClick={this.handleButtonClick}
           innerWidth={innerWidth}
           getRequestValue={this.getRequestValue}
-          setY={(yPos)=>{this.setState({y: yPos})}}
+          setY={(yPos)=>{console.log('post');this.setState({y: yPos})}}
         />
         <MainSection path="services&individual"
           handleButtonClick={this.handleButtonClick}

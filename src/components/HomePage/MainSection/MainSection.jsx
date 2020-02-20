@@ -7,14 +7,6 @@ import ContactPage from '_components/ContactPage';
 
 import '.././HomePage.module.scss';
 
-const ScrollToPos = props => {
-  useEffect(() => {
-    window.scrollTo(0, 1500);
-  }, []);
-
-  return null;
-};
-
 const MainSection = ({
   path,
   handleButtonClick,
@@ -22,15 +14,10 @@ const MainSection = ({
   getRequestValue,
   setY,
 }) => {
-  useEffect(() => {
-    window.scrollTo(0, 1500);
-  }, []);
-
   return (
     <div className="root" styleName="slider-root" id="slider-root">
       <MainHomePage handleClick={handleButtonClick}/>
       <AboutUsPage handleClick={handleButtonClick} />
-      <ScrollToPos slug={path} />
       <ServicesPage
         slug={path}
         setY={setY}

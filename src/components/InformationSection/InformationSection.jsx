@@ -31,11 +31,10 @@ const InformationSection = ({
         <div styleName="content-root">
           <Row>
             <Col md="3">
-              <Link
+              <div
                 styleName="back"
                 aria-label="Back to main view"
-                onClick={()=>goBack(serviceId)}
-                to={`/${type}`}
+                onClick={async ()=>{await navigate(`/${type}`);goBack(serviceId)}}
               />
             </Col>
           </Row>
@@ -50,8 +49,9 @@ const InformationSection = ({
               />
               <button
                 styleName="contact"
-                onClick={() => {
+                onClick={async () => {
                   selectService(service.name);
+                  await navigate(`/${type}`);
                   handleButtonClick();
                 }}
               >

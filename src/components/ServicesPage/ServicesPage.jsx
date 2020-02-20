@@ -16,7 +16,7 @@ const getItems = (servicesSlug) => {
   return menuItems;
 }
 
-const ServicesPage = ({ slug }) => (
+const ServicesPage = ({ slug, setY }) => (
   <div styleName="root">
     <Fragment>
       <div styleName="filter" />
@@ -38,8 +38,8 @@ const ServicesPage = ({ slug }) => (
           {getItems(slug.slice(9)).map((item) => (
             <Link
               styleName={classNames('item', {mainItem: !slug.slice(9)})}
-              onClick={() => sessionStorage.setItem('scroll', window.scrollY)}
-              to={item.link}
+              onClick={()=>setY(window.scrollY)}
+              to={`${item.link}`}
             >
               {item.name}
             </Link>
